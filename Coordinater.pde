@@ -1,5 +1,27 @@
 class Coordinater {
-  static Point TopLeft(Point[] pts) {
+  Point[] pts;
+  
+  Coordinater(Point[] points) {
+    pts = points;
+  }
+  
+  void Left(int len) {
+    
+  }
+  
+  void Right(int len) {
+    
+  }
+  
+  void Up(int len) {
+    
+  }
+  
+  void Down(int len) {
+    
+  }
+  
+  Point TopLeft() {
     Point p = new Point(99999999999, 9999999999);
     for (int i = 0; i < pts.length; i++) {
       if (pts[i].x < p.x) {
@@ -12,7 +34,7 @@ class Coordinater {
     return p;
   }
   
-  static Point BottomRight(Point[] pts) {
+  Point BottomRight() {
     Point p = new Point(0, 0);
     for (int i = 0; i < pts.length; i++) {
       if (pts[i].x > p.x) {
@@ -23,5 +45,13 @@ class Coordinater {
       }
     }
     return p;
+  }
+  
+  Point[] Adjust(int margin) {
+    Point top_left = TopLeft(pts);
+    for (int i = 0; i < pts.length; i++) {
+      pts[i].Add(top_left, margin);
+    }
+    return pts;
   }
 }
