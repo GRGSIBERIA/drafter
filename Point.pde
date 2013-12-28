@@ -11,8 +11,13 @@ class Point {
     y = p.y;
   }
   
-  void Add(Point v, int margin) {
-    x += v.x + margin;
-    y += v.y + margin;
+  void Add(Point v, int mergin) {
+    if (v.x < 0)
+      x += -v.x;
+    x += mergin;
+      
+    if (v.y < 0)
+      y += -v.y;
+    y += mergin;
   }
 }

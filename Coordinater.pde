@@ -9,25 +9,25 @@ class Coordinater {
   void L(int len) {
     Point c = new Point(pts[pts.length-1]);
     c.x -= len;
-    append(pts, c);
+    pts = (Point[])append(pts, c);
   }
   
   void R(int len) {
     Point c = new Point(pts[pts.length-1]);
     c.x += len;
-    append(pts, c);
+    pts = (Point[])append(pts, c);
   }
   
   void U(int len) {
     Point c = new Point(pts[pts.length-1]);
     c.y -= len;
-    append(pts, c);
+    pts = (Point[])append(pts, c);
   }
   
   void D(int len) {
     Point c = new Point(pts[pts.length-1]);
     c.y += len;
-    append(pts, c);
+    pts = (Point[])append(pts, c);
   }
   
   Point TopLeft() {
@@ -36,7 +36,7 @@ class Coordinater {
       if (pts[i].x < p.x) {
         p.x = pts[i].x;
       }
-      if (pts[i].y < p.x) {
+      if (pts[i].y < p.y) {
         p.y = pts[i].y;
       }
     }
