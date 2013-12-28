@@ -17,10 +17,7 @@ void setup() {
 
 void coordinate() {
   Coordinater coord = new Coordinater();
-  coord.L(100);
-  coord.D(100);
-  coord.R(200);
-  coord.U(200);
+  Paper.Paint(coord);
   
   Point[] points = coord.Adjust(mergin);
   println(points.length);
