@@ -1,29 +1,37 @@
 class Coordinater {
   Point[] pts;
   
-  Coordinater(Point[] points) {
-    pts = points;
+  Coordinater() {
+    pts = new Point[1];
+    pts[0] = new Point(0, 0);
   }
   
-  void Left(int len) {
-    Point c = pts[pts.length-1];
-    
+  void L(int len) {
+    Point c = new Point(pts[pts.length-1]);
+    c.x -= len;
+    append(pts, c);
   }
   
-  void Right(int len) {
-    
+  void R(int len) {
+    Point c = new Point(pts[pts.length-1]);
+    c.x += len;
+    append(pts, c);
   }
   
-  void Up(int len) {
-    
+  void U(int len) {
+    Point c = new Point(pts[pts.length-1]);
+    c.y -= len;
+    append(pts, c);
   }
   
-  void Down(int len) {
-    
+  void D(int len) {
+    Point c = new Point(pts[pts.length-1]);
+    c.y += len;
+    append(pts, c);
   }
   
   Point TopLeft() {
-    Point p = new Point(99999999999, 9999999999);
+    Point p = new Point(width, height);
     for (int i = 0; i < pts.length; i++) {
       if (pts[i].x < p.x) {
         p.x = pts[i].x;
@@ -49,7 +57,7 @@ class Coordinater {
   }
   
   Point[] Adjust(int margin) {
-    Point top_left = TopLeft(pts);
+    Point top_left = TopLeft();
     for (int i = 0; i < pts.length; i++) {
       pts[i].Add(top_left, margin);
     }
