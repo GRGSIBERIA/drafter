@@ -6,6 +6,11 @@ class Point {
     y = 0;
   }
   
+  Point(Point p) {
+    x = p.x;
+    y = p.y;
+  }
+  
   void Add(Point v, int margin) {
     x += v.x + margin;
     y += v.y + margin;

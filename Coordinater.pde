@@ -6,6 +6,7 @@ class Coordinater {
   }
   
   void Left(int len) {
+    Point c = pts[pts.length-1];
     
   }
   
